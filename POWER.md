@@ -25,6 +25,8 @@ The Checkmarx MCP Server is a secure gateway that bridge the AI-powered developm
 
 ## Onboarding
 
+> **💡 Automatic Setup**: If you already have the Checkmarx Developer Assist plugin installed and configured, this Power will automatically use your existing MCP server configuration - no additional setup required!
+
 ### Prerequisites
 
 - Active Checkmarx One account with Developer Assist enabled. You can subscribe to Checkmarx One using the AWS Marketplace (https://aws.amazon.com/marketplace/pp/prodview-xbxjoco7f6xwi)
@@ -46,6 +48,19 @@ After installing the Checkmarx Developer Assist plugin follow these steps to aut
 The Checkmarx MCP Server is automatically installed when you authenticate in your IDE with the Checkmarx Developer Assist plugin or when you install this Checkmarx Kiro Power.
 
 ### Configuration
+
+**Option 1: Automatic (Recommended) - Use Existing Plugin Configuration**
+
+If you have the Checkmarx Developer Assist plugin installed and configured:
+
+1. **No action needed!** The Power automatically uses the MCP server that's already configured by the plugin
+2. The plugin configures the `Checkmarx` MCP server entry in your VS Code settings
+3. This Power's tools will use that existing configuration
+4. Simply reload VS Code after installing this Power
+
+**Option 2: Manual Configuration (Plugin Not Installed)**
+
+If you don't have the Checkmarx plugin installed, or prefer standalone Power configuration:
 
 **Step 1: Obtain Your API Key**
 
@@ -77,6 +92,21 @@ The MCP server requires two configuration values:
 **Step 3: Verify Connection**
 
 Once configured, the MCP server will connect to Checkmarx One and enable security scanning capabilities in your Kiro IDE.
+
+### How Automatic Configuration Works
+
+When you have the Checkmarx Developer Assist plugin installed:
+
+1. **Plugin Configuration**: The plugin creates an MCP server entry named `Checkmarx` in your VS Code `mcp.json` with your credentials
+2. **Power Integration**: This Power's tools (`codeRemediation`, `packageRemediation`, `imageRemediation`) detect and use the existing `Checkmarx` MCP server automatically
+3. **No Duplication**: You don't need to configure the same credentials twice - the Power reuses what the plugin already set up
+4. **Fallback**: If the plugin is not installed, you can manually configure the standalone `checkmarx` MCP server entry using the template in this Power's `mcp.json` file
+
+**Benefits**:
+- ✅ Zero manual configuration if plugin is installed  
+- ✅ Single source of credentials (plugin manages them)
+- ✅ Automatic token refresh when plugin updates credentials
+- ✅ Works standalone without plugin if needed
 
 ## MCP Tools Reference
 
