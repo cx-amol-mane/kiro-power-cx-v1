@@ -322,7 +322,12 @@ Here's the updated Dockerfile..."
 - **Use Ignore Wisely** - Only ignore risks that are truly false positives or have documented compensating controls
 - **Monitor Container Images** - Regularly scan and update base images to address newly discovered vulnerabilities
 
+## Checkmarx MCP License and Support
 
+This power integrates with Checkmarx MCP Server (Apache-2.0).
+
+- [Privacy Policy](https://checkmarx.com/privacy-policy/)
+- [Support](https://support.checkmarx.com/)
 
 ---
 
